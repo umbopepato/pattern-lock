@@ -2,9 +2,21 @@
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      background: #fafafa;
+      background: linear-gradient(-45deg, #d38312, #a83279);
+      background-size: cover;
+      margin: 0;
+      height: 100vh;
+    }
+
+    #demo {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 80px;
     }
   </style>
 </head>
@@ -15,12 +27,9 @@
     import { html, render } from 'lit-html';
     import '../dist/pattern-unlock.js';
 
-    const title = 'Hello owc World!';
     render(
       html`
-        <pattern-unlock .title=${title}>
-          some more light-dom
-        </pattern-unlock>
+        <pattern-unlock></pattern-unlock>
       `,
       document.querySelector('#demo')
     );
