@@ -1,7 +1,7 @@
 {
   "name": "pattern-lock",
   "version": "0.0.0",
-  "description": "A pattern unlock web component",
+  "description": "A pattern lock web component",
   "author": "Umberto Pepato",
   "license": "MIT",
   "main": "index.js",

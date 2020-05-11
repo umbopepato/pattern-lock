@@ -1,23 +1,9 @@
 import { html, css, LitElement, property, svg, internalProperty, query, queryAll } from 'lit-element';
 import { classMap } from 'lit-html/directives/class-map';
+import { CursorPosition, IterableNodeListOf } from './types';
+import { arrSequence, distance, limitInRange, resolveDotCenter } from './util';
 
-type IterableNodeListOf<T extends Node> = NodeListOf<T> & Iterable<T>;
-
-interface CursorPosition {
-  x: number;
-  y: number;
-}
-
-const resolveDotCenter = (num: number) => ({
-  cx: 20 + num % 3 * 40,
-  cy: 20 + Math.floor(num / 3) * 40
-});
-
-const distance = (x1: number, y1: number, x2: number, y2: number) => Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
-
-const limitInRange = (num: number, min: number, max: number) => Math.min(Math.max(num, min), max);
-
-const dots = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+const dots = arrSequence(8);
 
 export class PatternLock extends LitElement implements EventListenerObject {
   static styles = css`

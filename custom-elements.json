@@ -3,7 +3,7 @@
   "tags": [
     {
       "name": "pattern-lock",
-      "description": "A component with a title and an action counter",
+      "description": "A pattern lock web component",
       "properties": [
         {
           "name": "title",
