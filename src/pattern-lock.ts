@@ -20,7 +20,6 @@ const limitInRange = (num: number, min: number, max: number) => Math.min(Math.ma
 const dots = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
 export class PatternLock extends LitElement implements EventListenerObject {
-  // language=CSS
   static styles = css`
     :host {
       width: 324px;
@@ -37,6 +36,17 @@ export class PatternLock extends LitElement implements EventListenerObject {
       stroke: transparent;
       stroke-width: 15px;
     }
+    
+    circle.touched {
+      animation: pop .05s ease alternate;
+      animation-iteration-count: 2;
+    }
+    
+    @keyframes pop {
+      to {
+        transform: scale(2);
+      }
+    }
 
     line {
       stroke: #FFF;
@@ -48,7 +58,7 @@ export class PatternLock extends LitElement implements EventListenerObject {
     }
 
     @keyframes fade {
-      100% {
+      to {
         opacity: 0;
       }
     }
@@ -65,6 +75,7 @@ export class PatternLock extends LitElement implements EventListenerObject {
     window.addEventListener('touchend', this);
     window.addEventListener('touchmove', this);
     this.dragging = true;
+    this.sequence.push(num);
     event.preventDefault();
   }
 
@@ -99,7 +110,7 @@ export class PatternLock extends LitElement implements EventListenerObject {
         break;
       case 'touchmove':
         const touch = event.touches[0];
-        const padding = 15;
+        const padding = 20;
         for (const dot of this.dots!) {
           const rect = dot.getBoundingClientRect();
           if (touch.pageX >= rect.left + window.scrollX - padding &&
@@ -127,7 +138,9 @@ export class PatternLock extends LitElement implements EventListenerObject {
             cy=${cy}
             @touchstart=${(e: Event) => this.onDragStart(num, e)}
             @touchenter=${() => this.onHoverDot(num)}
-            @touchend=${(e: Event) => this.onDragEnd(num, e)} />
+            @touchend=${(e: Event) => this.onDragEnd(num, e)}
+            class=${classMap({touched: this.sequence.includes(num)})}
+            style="transform-origin: ${cx}px ${cy}px"/>
     `;
   }
 
