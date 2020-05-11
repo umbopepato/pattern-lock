@@ -1,1 +1,1 @@
-export { PatternUnlock } from './src/PatternUnlock.js';
+export { PatternLock } from './src/pattern-lock.js';

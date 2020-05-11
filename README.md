@@ -1,19 +1,19 @@
-# \<pattern-unlock>
+# \<pattern-lock>
 
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
 ## Installation
 ```bash
-npm i pattern-unlock
+npm i pattern-lock
 ```
 
 ## Usage
 ```html
 <script type="module">
-  import 'pattern-unlock/pattern-unlock.js';
+  import 'pattern-lock/pattern-lock.js';
 </script>
 
-<pattern-unlock></pattern-unlock>
+<pattern-lock></pattern-lock>
 ```
 
 ## Linting with ESLint, Prettier, and Types

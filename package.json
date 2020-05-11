@@ -1,8 +1,8 @@
 {
-  "name": "pattern-unlock",
+  "name": "pattern-lock",
   "version": "0.0.0",
-  "description": "Webcomponent pattern-unlock following open-wc recommendations",
-  "author": "pattern-unlock",
+  "description": "A pattern unlock web component",
+  "author": "Umberto Pepato",
   "license": "MIT",
   "main": "index.js",
   "module": "index.js",

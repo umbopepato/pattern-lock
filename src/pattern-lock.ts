@@ -19,7 +19,7 @@ const limitInRange = (num: number, min: number, max: number) => Math.min(Math.ma
 
 const dots = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
-export class PatternUnlock extends LitElement implements EventListenerObject {
+export class PatternLock extends LitElement implements EventListenerObject {
   // language=CSS
   static styles = css`
     :host {

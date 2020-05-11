@@ -1,12 +1,12 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import {PatternUnlock} from '../src/PatternUnlock.js';
-import '../pattern-unlock.js';
+import {PatternLock} from '../src/pattern-lock.js';
+import '../pattern-lock.js';
 //
 // describe('PatternUnlock', () => {
 //   it('has a default title "Hey there" and counter 5', async () => {
 //     const el: PatternUnlock = await fixture(html`
-//       <pattern-unlock></pattern-unlock>
+//       <pattern-lock></pattern-lock>
 //     `);
 //
 //     expect(el.title).to.equal('Hey there');
@@ -15,7 +15,7 @@ import '../pattern-unlock.js';
 //
 //   it('increases the counter on button click', async () => {
 //     const el: PatternUnlock = await fixture(html`
-//       <pattern-unlock></pattern-unlock>
+//       <pattern-lock></pattern-lock>
 //     `);
 //     el.shadowRoot!.querySelector('button')!.click();
 //
@@ -24,7 +24,7 @@ import '../pattern-unlock.js';
 //
 //   it('can override the title via attribute', async () => {
 //     const el: PatternUnlock = await fixture(html`
-//       <pattern-unlock title="attribute title"></pattern-unlock>
+//       <pattern-lock title="attribute title"></pattern-lock>
 //     `);
 //
 //     expect(el.title).to.equal('attribute title');
@@ -32,7 +32,7 @@ import '../pattern-unlock.js';
 //
 //   it('passes the a11y audit', async () => {
 //     const el: PatternUnlock = await fixture(html`
-//       <pattern-unlock></pattern-unlock>
+//       <pattern-lock></pattern-lock>
 //     `);
 //
 //     await expect(el).shadowDom.to.be.accessible();
